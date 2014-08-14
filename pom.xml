@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cl.taichi2000.poc</groupId>
+	<artifactId>flyway-maven-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Demo de flyway usando maven</name>
+	<description>Pequeña demo demostrando el uso de flyway con maven. Siguiendo las indicaciones desde http://flywaydb.org/getstarted/firststeps/maven.html</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<url>jdbc:h2:file:target/foobar</url>
+					<user>sa</user>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.h2database</groupId>
+						<artifactId>h2</artifactId>
+						<version>1.3.170</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
